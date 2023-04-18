@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "radiumtest"
+version = "0.1.0"
+description = "Test task for Radium"
+authors = ["Strelchenko Aleksandr"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.8"
+
+[tool.poetry.extras]
+lint = [ "pylint",]
+
+[tool.poetry.dependencies.pylint]
+version = "*"
+optional = true
+
+[tool.black]
+line-length = 120
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.17"
+pytest = "^7.3"
+mypy = "^1.2"
+wemake-python-styleguide = "^0.17"
+tox = "^4.4"
+pre-commit = "^3.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
